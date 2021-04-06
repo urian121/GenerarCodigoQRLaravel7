@@ -1,0 +1,34 @@
+
+Pasos ::
+
+1. Crear el Proyecto con el comanado; composer create-project laravel/laravel="7.*" nombredelProyecto
+
+2. Creo;  Migracion - Controlador - Model y todos los recursos necesarios con el comando,
+    php artisan make:model nombredelControlador -Migracion
+
+3. Creo mi BD 
+
+4. Configuro las variables del entorno en mi archivo .env
+
+5. Creo los campos de mi migracion
+
+6. Ejecuto mi Migracion.
+7. Agrego algunos registros de forma manual en BD
+8. Importante, Usaremos un paquete llamado simple-QRcode el cual permite general de forma facil codigo  qr
+    " simplesoftwareio/simple-qrcode ", el mismo lo instalaremos a traves de composer
+9. Instalar el paquete con el comando  " composer require simplesoftwareio/simple-qrcode "
+
+10. Configurar el paquete de código QR simple, vamos a config/app.php y agregamos esto;
+'providers' => [
+	....
+	SimpleSoftwareIO\QrCode\QrCodeServiceProvider::class,
+],
+
+'aliases' => [
+	....
+	'QrCode' => SimpleSoftwareIO\QrCode\Facades\QrCode::class,
+],
+
+
+11. Listo ya esta configurado ya poddemo probar si funciana, pegando este codigo en la vista
+{!! QrCode::size(250)->generate('Hola mis pequeños suscriptores ..!'); !!}
