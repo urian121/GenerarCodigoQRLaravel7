@@ -17,7 +17,7 @@
   font-weight: 600;
   }
   h4{
-  color:#fda205;;
+  color:#fda205;
   font-size: 40px;
   font-weight: 600;
   }
@@ -61,7 +61,7 @@
             {{
             $miQr = QrCode::
                   // format('png')
-                  size(150)  //defino el tamaño
+                  size(200)  //defino el tamaño
                   ->backgroundColor(250, 240, 215) //defino el fondo
                   ->color(255, 0, 0)
                   ->margin(1)  //defino el margen
